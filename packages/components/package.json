@@ -56,8 +56,8 @@
     "@trpc-playground/query-extension": "workspace:1.0.1",
     "@trpc-playground/typescript-extension": "workspace:1.0.0",
     "@trpc-playground/utils": "workspace:1.0.1",
-    "@trpc/client": "10.5.0",
-    "@trpc/react-query": "10.5.0",
+    "@trpc/client": "11.0.0-rc.593",
+    "@trpc/react-query": "11.0.0-rc.593",
     "clsx": "^1.2.1",
     "jotai": "^1.11.2",
     "object-inspect": "^1.12.2",
@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@trpc-playground/types": "workspace:1.0.0",
-    "@trpc/server": "10.5.0",
+    "@trpc/server": "11.0.0-rc.593",
     "@types/object-inspect": "1.8.1",
     "@types/react": "17.0.44",
     "@types/react-input-autosize": "2.2.1"

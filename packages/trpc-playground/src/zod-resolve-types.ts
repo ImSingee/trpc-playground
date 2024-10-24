@@ -14,13 +14,13 @@ const buildTrpcTsType = (router: AnyRouter, procedureTypes: ProcedureTypes) => {
   const procedureObject = {} as Record<string, string>
 
   Object.entries(procedures)
-    .filter(([, { _def }]) => _def.query || _def.mutation)
+    .filter(([, { _def }]) => _def.type === 'query' || _def.type === 'mutation')
     .forEach(([name, procedure]) => {
       let procedureTypeDef = ''
 
       const inputType = procedureTypes.mutations[name] || procedureTypes.queries[name] || ''
-      if (procedure._def?.query) procedureTypeDef += `query: (${inputType}) => void,`
-      else if (procedure._def?.mutation) procedureTypeDef += `mutate: (${inputType}) => void,`
+      if (procedure._def?.type === 'query') procedureTypeDef += `query: (${inputType}) => void,`
+      else if (procedure._def?.type === 'mutation') procedureTypeDef += `mutate: (${inputType}) => void,`
 
       lodash.set(procedureObject, name, `{${procedureTypeDef}}`)
     })
